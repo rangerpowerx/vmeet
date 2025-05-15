@@ -1,0 +1,135 @@
+<?php
+// Procesamiento del formulario
+$mensaje = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+    $motivo = htmlspecialchars($_POST["motivo"]);
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $to = "cuentagtapke@gmail.com";
+        $subject = "Solicitud de eliminación de cuenta VMeet";
+        $body = "Se ha recibido una solicitud para eliminar la cuenta de VMeet.\n\nEmail: $email\nMotivo: $motivo";
+        $headers = "From: no-reply@vmeet.app";
+
+        if (mail($to, $subject, $body, $headers)) {
+            $mensaje = "✅ Tu solicitud ha sido enviada correctamente.";
+        } else {
+            $mensaje = "❌ Hubo un problema al enviar el correo. Intenta de nuevo más tarde.";
+        }
+    } else {
+        $mensaje = "❌ Por favor introduce un correo electrónico válido.";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eliminar cuenta | VMeet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: #ffffff;
+    }
+
+    header {
+      background-color: rgba(0,0,0,0.8);
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 180px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #00ffe0;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffe0;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #ff00cc;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 6px;
+      background-color: #222;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #00ffe0;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00cccc;
+    }
+
+    .mensaje {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="VMeet_Logo_Transparent.png" alt="Logo VMeet">
+    <h1>Formulario de Eliminación de Cuenta</h1>
+  </header>
+  <main>
+    <p>Completa este formulario para solicitar la eliminación de tu cuenta en VMeet. Recibirás una confirmación por correo si todo se procesa correctamente.</p>
+
+    <?php if (!empty($mensaje)) echo "<div class='mensaje'>$mensaje</div>"; ?>
+
+    <form method="POST">
+      <label for="email">Correo electrónico registrado:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="motivo">Motivo de la eliminación (opcional):</label>
+      <textarea id="motivo" name="motivo" rows="4" placeholder="Cuéntanos por qué deseas eliminar tu cuenta..."></textarea>
+
+      <button type="submit">Enviar solicitud</button>
+    </form>
+  </main>
+  <footer>
+    © <?php echo date("Y"); ?> VMeet. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
