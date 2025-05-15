@@ -1,0 +1,106 @@
+<?php
+// index.php - Política de Privacidad de VMeet
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad | VMeet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: #ffffff;
+    }
+
+    header {
+      background-color: rgba(0,0,0,0.8);
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 180px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #00ffe0;
+      text-shadow: 0 0 10px #00ffe0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffe0;
+    }
+
+    h2 {
+      color: #ff00cc;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    a {
+      color: #00ffe0;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Image_fx.jpg" alt="Logo VMeet">
+    <h1>Política de Privacidad</h1>
+  </header>
+  <main>
+    <p>En VMeet, valoramos profundamente tu privacidad. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos tu información personal al utilizar nuestra aplicación social diseñada para gamers adultos (mayores de 18 años).</p>
+
+    <h2>1. Información que Recopilamos</h2>
+    <p>Recopilamos la información que tú nos proporcionas directamente al registrarte, crear tu perfil, chatear con otros usuarios o participar en eventos dentro de la app. Esto incluye tu correo electrónico, nombre de usuario, preferencias de juego y cualquier contenido que publiques o compartas.</p>
+
+    <h2>2. Uso de la Información</h2>
+    <p>Utilizamos la información para ofrecerte una experiencia personalizada, facilitar el emparejamiento social entre jugadores afines, mejorar la plataforma, garantizar la seguridad y enviarte notificaciones relevantes sobre la aplicación.</p>
+
+    <h2>3. Compartir Información</h2>
+    <p>No vendemos ni compartimos tu información personal con terceros sin tu consentimiento, salvo en los casos legalmente requeridos o para proteger nuestros derechos y los de nuestros usuarios.</p>
+
+    <h2>4. Seguridad</h2>
+    <p>Implementamos medidas técnicas y organizativas adecuadas para proteger tus datos contra accesos no autorizados, pérdidas o alteraciones.</p>
+
+    <h2>5. Tus Derechos</h2>
+    <p>Como usuario, tienes derecho a acceder, corregir o eliminar tus datos personales, así como a retirar tu consentimiento en cualquier momento.</p>
+
+    <h2>6. Edad Mínima</h2>
+    <p>VMeet está destinado exclusivamente a personas mayores de 18 años. Al registrarte, declaras cumplir con este requisito.</p>
+
+    <h2>7. Cambios en esta Política</h2>
+    <p>Nos reservamos el derecho de modificar esta política. Notificaremos cualquier cambio significativo a través de la app o por correo electrónico.</p>
+
+    <h2>8. Contacto</h2>
+    <p>Si tienes dudas o solicitudes relacionadas con tu privacidad, escríbenos a <a href="mailto:privacidad@vmeet.app">cuentagtapke@gmail.com</a>.</p>
+  </main>
+  <footer>
+    © <?php echo date("Y"); ?> VMeet. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
