@@ -8,9 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $to = "cuentagtapke@gmail.com";
-        $subject = "Solicitud de eliminación de cuenta VMeet";
-        $body = "Se ha recibido una solicitud para eliminar la cuenta de VMeet.\n\nEmail: $email\nMotivo: $motivo";
-        $headers = "From: no-reply@vmeet.app";
+        $subject = "Solicitud de eliminación de cuenta Vimsy";
+        $body = "Se ha recibido una solicitud para eliminar la cuenta de Vimsy.\n\nEmail: $email\nMotivo: $motivo";
+        $headers = "From: no-reply@Vimsy.app";
 
         if (mail($to, $subject, $body, $headers)) {
             $mensaje = "✅ Tu solicitud ha sido enviada correctamente.";
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Eliminar cuenta | VMeet</title>
+  <title>Eliminar cuenta | Vimsy</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -113,11 +113,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/KFe5oQr.png" alt="Logo VMeet">
+    <img src="https://i.imgur.com/KFe5oQr.png" alt="Logo Vimsy">
     <h1>Formulario de Eliminación de Cuenta</h1>
   </header>
   <main>
-    <p>Completa este formulario para solicitar la eliminación de tu cuenta en VMeet. Recibirás una confirmación por correo si todo se procesa correctamente.</p>
+    <p>Completa este formulario para solicitar la eliminación de tu cuenta en Vimsy. Recibirás una confirmación por correo si todo se procesa correctamente.</p>
 
     <?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
       <div class="mensaje"><?php echo $mensaje; ?></div>
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </form>
   </main>
   <footer>
-    © <?php echo date("Y"); ?> VMeet. Todos los derechos reservados.
+    © <?php echo date("Y"); ?> Vimsy. Todos los derechos reservados.
   </footer>
 </body>
 </html>
